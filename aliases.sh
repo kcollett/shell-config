@@ -19,8 +19,7 @@ alias d='dirs -v'
 # alias po=popd
 alias pu=pushd
 alias po=popd
-for dirnum in 1 2 3 4 5 6 7 8 9
-do
+for dirnum in 1 2 3 4 5 6 7 8 9; do
     alias ${dirnum}="pushd +${dirnum}"
 done
 unset dirnum
@@ -40,11 +39,12 @@ alias lct='ll -ct'
 
 # git
 alias gi='git init'
-alias gs='git status'
-alias gss='git status -s'
 alias ga='git add'
 alias gd='git diff'
 alias gc='git commit'
+alias gs='git status'
+alias gss='git status -s'
+alias gl='git log'
 # be mindful of github command-line 'gh'
 alias ghe='git help'
 
@@ -76,4 +76,3 @@ alias venvinst='python3 -m pip install --editable .'
 # see https://github.com/pypa/pip/issues/11155
 # python upgraded to 3.10; comment this out for now
 #alias pipupg='python3 -m pip install --upgrade pip'
-
