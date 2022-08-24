@@ -100,6 +100,12 @@ unsetopt pushd_ignore_dups
 
 # User configuration
 
+# customize agnoster prompt_dir to limit current directory display
+# to two components (usually that's enough)
+prompt_dir() {
+    prompt_segment blue $CURRENT_FG '%2~'
+}
+
 # Not sure if I want to bring in the whole environ/path stuff here,
 # so we'll take baby steps
 PAGER=less
