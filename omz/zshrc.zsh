@@ -23,10 +23,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="minimal"
+# NB: picked "tango lignt" in iterm2 to make the blue for directory lighter
 ZSH_THEME="agnoster"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 [ -z ${INSIDE_EMACS} ] && ZSH_THEME="agnoster" || ZSH_THEME="minimal"
-       
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -106,17 +106,16 @@ unsetopt pushd_ignore_dups
 PAGER=less
 LESS='--dumb'
 CDPATH="~"
-dots=".[a-zA-Z0-9]*"            # quick way to get at the dot files
+dots=".[a-zA-Z0-9]*" # quick way to get at the dot files
 HISTSIZE=500
 #PUSHD_MINUS=1                   # old-school pushd/popd behavior XXX: emacs is new-school
 export PAGER LESS CDPATH dots HISTSIZE
 # suppress agnoster user@host display if logged in as "myself"
 export DEFAULT_USER="karencollett"
 
-
 #
 # PATH setup
-# 
+#
 
 # homebrew (resides in a different directory on Apple Silicon machines)
 brewdir="/usr/local/bin"
@@ -125,7 +124,6 @@ asbrewdir="/opt/homebrew/bin"
 #echo "brewdir: $brewdir"
 eval "$($brewdir/brew shellenv)"
 #[ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
-
 
 # typeset -U snarfed from
 # https://unix.stackexchange.com/questions/62579/is-there-a-way-to-add-a-directory-to-my-path-in-zsh-only-if-its-not-already-pre
