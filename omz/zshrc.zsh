@@ -113,6 +113,8 @@ HISTSIZE=500
 export PAGER LESS CDPATH dots HISTSIZE
 # suppress agnoster user@host display if logged in as "myself"
 export DEFAULT_USER="karencollett"
+# keep Python virtual environment from fussing with PS1 so agnoster will do its thin
+export VIRTUAL_ENV_DISABLE_PROMPT=true
 
 #
 # PATH setup
@@ -124,7 +126,10 @@ asbrewdir="/opt/homebrew/bin"
 [ -d "$asbrewdir" ] && brewdir="$asbrewdir"
 #echo "brewdir: $brewdir"
 eval "$($brewdir/brew shellenv)"
-#[ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# NB: The important changes are established "brew shellenv" command above
+# export MANPATH="/usr/local/man:$MANPATH"
+# export INFOPATH="/usr/local/INFO:$INFOPATH"
 
 # typeset -U snarfed from
 # https://unix.stackexchange.com/questions/62579/is-there-a-way-to-add-a-directory-to-my-path-in-zsh-only-if-its-not-already-pre
@@ -134,10 +139,6 @@ typeset -U path PATH
 path+=("$HOME/sh")
 path+=("$HOME/sh.local")
 export PATH
-
-# NB: The important changes are established "brew shellenv" command above
-# export MANPATH="/usr/local/man:$MANPATH"
-# export INFOPATH="/usr/local/INFO:$INFOPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
