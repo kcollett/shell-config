@@ -103,7 +103,9 @@ unsetopt pushd_ignore_dups
 # Not sure if I want to bring in the whole environ/path stuff here,
 # so we'll take baby steps
 PAGER=less
-LESS='--dumb'
+# NB: I'm not sure why I had this setting, but it doesn't play well with git
+#LESS='--dumb'
+LESS=FRX
 CDPATH="~"
 dots=".[a-zA-Z0-9]*" # quick way to get at the dot files
 HISTSIZE=500
