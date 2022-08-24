@@ -8,8 +8,8 @@
 # brainstormr=~/Projects/development/planetargon/brainstormr
 # cd $brainstormr
 #
-source "~/.aliases"
-[ -r "~/.aliases.local" ] && source "~/.aliases.local"
+source "$HOME/.aliases"
+[ -r "$HOME/.aliases.local" ] && source "$HOME/.aliases.local"
 bindkey -e
 # vi-mode plugin
 #bindkey -v
