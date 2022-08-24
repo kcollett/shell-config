@@ -23,9 +23,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="minimal"
-# NB: picked "tango lignt" in iterm2 to make the blue for directory lighter
-ZSH_THEME="agnoster"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
+# NB: picked "tango light" in iterm2 to make the blue for directory lighter
 [ -z ${INSIDE_EMACS} ] && ZSH_THEME="agnoster" || ZSH_THEME="minimal"
 
 # Set list of themes to pick from when loading at random
