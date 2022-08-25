@@ -111,7 +111,15 @@ prompt_dir() {
 PAGER=less
 # NB: I'm not sure why I had this setting, but it doesn't play well with git
 #LESS='--dumb'
-LESS=FRX
+# -F: automatically exit if entire output can be displayed on one screen
+# -j: jump target offset (e.g. for positioning search results)
+# -M: more verbose prompt
+# -q: use visual bell instead of audio
+# -R: output ANSI color and OSC8 escape sequences in "raw" form
+# -X: disable termcap init/deinit strings
+# -z: size of screen to display;
+#     a negative value creates overlap between pages
+LESS="-FMR -j2 -z-2"
 CDPATH="~"
 dots=".[a-zA-Z0-9]*" # quick way to get at the dot files
 HISTSIZE=500
@@ -121,6 +129,9 @@ export PAGER LESS CDPATH dots HISTSIZE
 export DEFAULT_USER="karencollett"
 # keep Python virtual environment from fussing with PS1 so agnoster will do its thin
 export VIRTUAL_ENV_DISABLE_PROMPT=true
+
+source $ZSH_CUSTOM/manpager
+export MANPAGER=less
 
 #
 # PATH setup

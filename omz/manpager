@@ -1,0 +1,14 @@
+#  -*- mode: shell-script; -*-
+
+# short "man" function to temporarily reconfigure TERMCAP
+# settings for less to display manpages with color
+# snarfed from https://www.howtogeek.com/683134/how-to-display-man-pages-in-color-on-linux/
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[47;90m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    command man "$@"
+}
