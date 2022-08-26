@@ -119,8 +119,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 # so we'll take baby steps
 PAGER=less
 MANPAGER=less
-# NB: I'm not sure why I had this setting, but it doesn't play well with git
-#LESS='--dumb'
 # -F: automatically exit if entire output can be displayed on one screen
 # -j: jump target offset (e.g. for positioning search results)
 # -M: more verbose prompt
@@ -137,7 +135,6 @@ export PAGER MANPAGER LESS CDPATH dots HISTSIZE
 
 # Add our functions to fpath
 fpath=($fpath ~/.functions)
-#source $ZSH_CUSTOM/manpager
 autoload man
 
 #
@@ -178,7 +175,8 @@ export PATH
 # export ARCHFLAGS="-arch x86_64"
 
 # mcfly config
-eval "$(mcfly init zsh)"
+# XXX: probably need to be more inclusive
+[ ${TERM_PROGRAM} = "iTerm.app" ] && eval "$(mcfly init zsh)"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
