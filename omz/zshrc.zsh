@@ -25,7 +25,8 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="minimal"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 # NB: picked "tango light" in iterm2 to make the blue for directory lighter
-[ -z ${INSIDE_EMACS} ] && ZSH_THEME="agnoster" || ZSH_THEME="minimal"
+# XXX: probably need to be more inclusive
+[ ${TERM_PROGRAM} = "iTerm.app" ] && ZSH_THEME="agnoster" || ZSH_THEME="minimal"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -88,17 +89,19 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #KC: removed vi-mode for now
-#KC: git define a ton of aliases, I prefer to make them as needed
+#KC: git defines a ton of aliases, I prefer to make them as needed
 plugins=(aliases)
 
 source $ZSH/oh-my-zsh.sh
 
-# undo some crap that OMZ has done in omz/lib/directories.zsh
+# undo some stupid crap that OMZ has done in omz/lib/directories.zsh
 unsetopt auto_pushd
 unsetopt pushdminus
 unsetopt pushd_ignore_dups
 
 # User configuration
+
+# agnoster theme customization
 
 # customize agnoster prompt_dir to limit current directory display
 # to two components (usually that's enough)
@@ -106,9 +109,16 @@ prompt_dir() {
     prompt_segment blue $CURRENT_FG '%2~'
 }
 
+# suppress agnoster user@host display if logged in as "myself"
+export DEFAULT_USER="karencollett"
+
+# keep Python virtual environment from fussing with PS1 so agnoster will do its thing
+export VIRTUAL_ENV_DISABLE_PROMPT=true
+
 # Not sure if I want to bring in the whole environ/path stuff here,
 # so we'll take baby steps
 PAGER=less
+MANPAGER=less
 # NB: I'm not sure why I had this setting, but it doesn't play well with git
 #LESS='--dumb'
 # -F: automatically exit if entire output can be displayed on one screen
@@ -123,15 +133,12 @@ LESS="-FMR -j2 -z-2"
 CDPATH="~"
 dots=".[a-zA-Z0-9]*" # quick way to get at the dot files
 HISTSIZE=500
-#PUSHD_MINUS=1                   # old-school pushd/popd behavior XXX: emacs is new-school
-export PAGER LESS CDPATH dots HISTSIZE
-# suppress agnoster user@host display if logged in as "myself"
-export DEFAULT_USER="karencollett"
-# keep Python virtual environment from fussing with PS1 so agnoster will do its thin
-export VIRTUAL_ENV_DISABLE_PROMPT=true
+export PAGER MANPAGER LESS CDPATH dots HISTSIZE
 
-source $ZSH_CUSTOM/manpager
-export MANPAGER=less
+# Add our functions to fpath
+fpath=($fpath ~/.functions)
+#source $ZSH_CUSTOM/manpager
+autoload man
 
 #
 # PATH setup
