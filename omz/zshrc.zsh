@@ -26,7 +26,7 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 # NB: picked "tango light" in iterm2 to make the blue for directory lighter
 # XXX: probably need to be more inclusive
-[ ${TERM_PROGRAM} = "iTerm.app" -o ${TERM_PROGRAM} = "Apple_Terminal" ] && ZSH_THEME="agnoster" || ZSH_THEME="minimal"
+[ "${TERM_PROGRAM}" = "iTerm.app" -o "${TERM_PROGRAM}" = "Apple_Terminal" ] && ZSH_THEME="agnoster" || ZSH_THEME="minimal"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -176,7 +176,7 @@ export PATH
 
 # mcfly config
 # XXX: probably need to be more inclusive
-[ ${TERM_PROGRAM} = "iTerm.app" -o ${TERM_PROGRAM} = "Apple_Terminal" ] && eval "$(mcfly init zsh)"
+[ "${TERM_PROGRAM}" = "iTerm.app" -o "${TERM_PROGRAM}" = "Apple_Terminal" ] && eval "$(mcfly init zsh)"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
