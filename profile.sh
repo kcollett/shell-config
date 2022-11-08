@@ -6,7 +6,7 @@
 # it's handy to preserve history across logouts.
 #	rm -f $HOME/.sh_history
 
-: define environment if it has not been done so already
+# define environment if it has not been done so already
 [ -z "$ENV_DEFINED" ] && . "$HOME/.environ"
 
 #
@@ -19,8 +19,8 @@
 # read its rc-file for login shells.
 #
 case $SHELL in
-    *bash)
-# comment out until I'm sure I need it
+*bash)
+	# comment out until I'm sure I need it
 	source $HOME/.bashrc
 	;;
 esac
