@@ -6,13 +6,14 @@
 #echo "Path: " $PATH
 
 # Where the newer functions live
-FUNDIR="$HOME/.functions"; export FUNDIR
+FUNDIR="$HOME/.functions"
+export FUNDIR
 
 # Set up *PATH variables
 #. "$FUNDIR/pathfuncs"
 . "$HOME/.path"
 
-ALIASFILE="$HOME/.alias"	# file where Alias info is kept
+ALIASFILE="$HOME/.alias" # file where Alias info is kept
 CDPATH=".:~"
 HISTSIZE=500
 export ALIASFILE CDPATH HISTSIZE
@@ -24,8 +25,9 @@ LESS='--dumb'
 export EXINIT LESS
 
 # miscellaneous
-dots=".[a-zA-Z0-9]*"			# quick way to get at the dot files
-TRUE="y"; FALSE=""
+dots=".[a-zA-Z0-9]*" # quick way to get at the dot files
+TRUE="y"
+FALSE=""
 export NAME dots TRUE FALSE
 export PWD
 
