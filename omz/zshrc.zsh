@@ -26,7 +26,8 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 # NB: picked "tango light" in iterm2 to make the blue for directory lighter
 # XXX: probably need to be more inclusive
-[ "${TERM_PROGRAM}" = "iTerm.app" -o "${TERM_PROGRAM}" = "Apple_Terminal" ] && ZSH_THEME="agnoster" || ZSH_THEME="minimal"
+[ "${TERM_PROGRAM}" = "iTerm.app" -o "${TERM_PROGRAM}" = "Apple_Terminal" ] &&
+    ZSH_THEME="agnoster" || ZSH_THEME="minimal"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -88,9 +89,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#KC: removed vi-mode for now
 #KC: git defines a ton of aliases, I prefer to make them as needed
-plugins=(aliases)
+plugins=(aliases vi-mode)
+VI_MODE_SET_CURSOR=true
 
 source $ZSH/oh-my-zsh.sh
 
@@ -176,7 +177,8 @@ export PATH
 
 # mcfly config
 # XXX: probably need to be more inclusive
-[ "${TERM_PROGRAM}" = "iTerm.app" -o "${TERM_PROGRAM}" = "Apple_Terminal" ] && eval "$(mcfly init zsh)"
+[ "${TERM_PROGRAM}" = "iTerm.app" -o "${TERM_PROGRAM}" = "Apple_Terminal" ] &&
+    eval "$(mcfly init zsh)"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
