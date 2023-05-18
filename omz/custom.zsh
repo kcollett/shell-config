@@ -10,3 +10,7 @@
 #
 source "$HOME/.aliases"
 [ -r "$HOME/.aliases.local" ] && source "$HOME/.aliases.local"
+
+# vi-mode customizations (some need to occur after plugin is loaded)
+VI_MODE_SET_CURSOR=true
+MODE_INDICATOR=""
