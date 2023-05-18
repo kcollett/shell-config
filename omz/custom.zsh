@@ -10,7 +10,3 @@
 #
 source "$HOME/.aliases"
 [ -r "$HOME/.aliases.local" ] && source "$HOME/.aliases.local"
-bindkey -e
-# vi-mode plugin
-#bindkey -v
-#VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
