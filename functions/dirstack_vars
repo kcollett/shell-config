@@ -1,0 +1,18 @@
+#  -*- mode: shell-script; -*-
+
+# short function to set a bunch of variables corresponding to the current directory stack
+# (from formatted_dirs from old zshrc)
+dirstack_vars() {
+    declare fd_tmp=$(mktemp /tmp/dirs_XXX)
+    declare -i num=0
+
+    dirs -p |
+        while read ds_dir; do
+            # echo "d$num='$f'" >>$fd_tmp
+            eval "d$num='$ds_dir'"
+            let num++
+        done
+
+    # source "$fd_tmp"
+    # rm "$fd_tmp"
+}

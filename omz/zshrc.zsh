@@ -99,6 +99,9 @@ unsetopt auto_pushd
 unsetopt pushdminus
 unsetopt pushd_ignore_dups
 
+# add hook to save directory stack components into variables $d<number>
+chpwd_functions+=('dirstack_vars')
+
 # User configuration
 
 # agnoster theme customization
@@ -135,7 +138,7 @@ export PAGER MANPAGER LESS CDPATH dots HISTSIZE
 
 # Add our functions to fpath
 fpath=($fpath ~/.functions)
-autoload man
+autoload man dirstack_vars
 
 #
 # PATH setup
