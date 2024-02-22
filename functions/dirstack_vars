@@ -3,12 +3,13 @@
 # short function to set a bunch of variables corresponding to the current directory stack
 # (from formatted_dirs from old zshrc)
 dirstack_vars() {
-    declare fd_tmp=$(mktemp /tmp/dirs_XXX)
+    #    declare fd_tmp=$(mktemp /tmp/dirs_XXX)
     declare -i num=0
 
     dirs -p |
         while read ds_dir; do
             # echo "d$num='$f'" >>$fd_tmp
+            ds_dir=${ds_dir/\~/$HOME} # this is a hack but it's the only thing I can get to work
             eval "d$num='$ds_dir'"
             let num++
         done

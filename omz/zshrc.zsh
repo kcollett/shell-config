@@ -90,7 +90,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #KC: Skip git plugin because it defines a ton of aliases; I prefer to make them as needed.
-plugins=(aliases vi-mode)
+# plugins=(aliases vi-mode)
+plugins=(aliases)
+bindkey -e
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,8 +101,14 @@ unsetopt auto_pushd
 unsetopt pushdminus
 unsetopt pushd_ignore_dups
 
+# Add my custom functions to fpath
+fpath=($fpath ~/.functions)
+autoload man dirstack_vars
+
 # add hook to save directory stack components into variables $d<number>
 chpwd_functions+=('dirstack_vars')
+# I tried "set -o magic_equal_subst" to get ~ expansion but that didn't work
+dirstack_vars
 
 # User configuration
 
@@ -136,10 +144,6 @@ dots=".[a-zA-Z0-9]*" # quick way to get at the dot files
 HISTSIZE=500
 export PAGER MANPAGER LESS CDPATH dots HISTSIZE
 
-# Add our functions to fpath
-fpath=($fpath ~/.functions)
-autoload man dirstack_vars
-
 #
 # PATH setup
 #
@@ -162,6 +166,8 @@ typeset -U path PATH
 # to prepend, use path=(newdir "$path[@]")
 path+=("$HOME/sh")
 path+=("$HOME/sh.local")
+# prepend homebrew python bin directory
+path=($(brew --prefix python)/libexec/bin "$path[@]")
 export PATH
 
 # You may need to manually set your language environment
