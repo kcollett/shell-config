@@ -90,9 +90,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #KC: Skip git plugin because it defines a ton of aliases; I prefer to make them as needed.
-# plugins=(aliases vi-mode)
-plugins=(aliases)
-bindkey -e
+plugins=(aliases vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
