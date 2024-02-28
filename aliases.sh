@@ -52,9 +52,12 @@ alias gl='git log'
 alias ghe='git help'
 
 # vim
-alias v=vim
-alias vi=vim
-alias view='vim -R'
+#alias v=vim
+#alias vi=vim
+#alias view='vim -R'
+alias v=nvim
+alias vi=nvim
+alias view='nvim -R'
 
 # miscellaneous
 #alias bigprocs='ps -ael | sort -nr +9 -10'
