@@ -39,6 +39,7 @@ alias lct='ll -ct'
 
 # git
 alias gi='git init'
+alias gf='git fetch'
 alias ga='git add'
 alias gd='git diff'
 alias gc='git commit'
