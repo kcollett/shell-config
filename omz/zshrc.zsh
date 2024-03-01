@@ -26,7 +26,7 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 # NB: picked "tango light" in iterm2 to make the blue for directory lighter
 # XXX: probably need to be more inclusive
-[ "${TERM_PROGRAM}" = "iTerm.app" -o "${TERM_PROGRAM}" = "Apple_Terminal" ] &&
+[ "${TERM_PROGRAM}" = "iTerm.app" -o "${TERM_PROGRAM}" = "tmux"  -o "${TERM_PROGRAM}" = "Apple_Terminal" ] &&
     ZSH_THEME="agnoster" || ZSH_THEME="minimal"
 
 # Set list of themes to pick from when loading at random
@@ -165,7 +165,7 @@ typeset -U path PATH
 path+=("$HOME/sh")
 path+=("$HOME/sh.local")
 # prepend homebrew python bin directory
-path=($(brew --prefix python)/libexec/bin "$path[@]")
+#path=($(brew --prefix python)/libexec/bin "$path[@]")
 export PATH
 
 # You may need to manually set your language environment
