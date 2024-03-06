@@ -183,8 +183,15 @@ export PATH
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# mcfly config
-[ "${IS_TERMINAL}" = "true" ] && eval "$(mcfly init zsh)"
+if [ "${IS_TERMINAL}" = "true" ]
+then
+    # mcfly config
+    eval "$(mcfly init zsh)"
+
+    # zsh-autosuggestions config
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    bindkey '^ ' autosuggest-accept # use Ctrl-<space> to accept suggestion
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
