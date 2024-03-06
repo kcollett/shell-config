@@ -191,6 +191,11 @@ then
     # zsh-autosuggestions config
     source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     bindkey '^ ' autosuggest-accept # use Ctrl-<space> to accept suggestion
+
+    # zsh-syntax-highlighting
+    # NB: According to the installation documentation, this needs to be
+    #     at the end of the .zshrc file.
+    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
