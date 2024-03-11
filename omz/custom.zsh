@@ -14,3 +14,8 @@ source "$HOME/.aliases"
 # vi-mode customizations (some need to occur after plugin is loaded)
 VI_MODE_SET_CURSOR=true
 MODE_INDICATOR=""
+# keep blinking cursor
+# see https://www.baeldung.com/linux/console-cursor-features
+VI_MODE_CURSOR_NORMAL=1
+VI_MODE_CURSOR_VISUAL=5
+VI_MODE_CURSOR_INSERT=5
