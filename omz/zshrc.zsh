@@ -126,23 +126,6 @@ export DEFAULT_USER="karencollett"
 # keep Python virtual environment from fussing with PS1 so agnoster will do its thing
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
-# Not sure if I want to bring in the whole environ/path stuff here,
-# so we'll take baby steps
-PAGER=less
-MANPAGER=less
-# -F: automatically exit if entire output can be displayed on one screen
-# -j: jump target offset (e.g. for positioning search results)
-# -M: more verbose prompt
-# -q: use visual bell instead of audio
-# -R: output ANSI color and OSC8 escape sequences in "raw" form
-# -X: disable termcap init/deinit strings
-# -z: size of screen to display;
-#     a negative value creates overlap between pages
-LESS="-FMR -j2 -z-2"
-CDPATH="~"
-dots=".[a-zA-Z0-9]*" # quick way to get at the dot files
-HISTSIZE=500
-export PAGER MANPAGER LESS CDPATH dots HISTSIZE
 
 #
 # PATH setup
@@ -185,6 +168,25 @@ export PATH
 
 if [ "${IS_TERMINAL}" = "true" ]
 then
+    # Not sure if I want to bring in the whole environ/path stuff here,
+    # so we'll take baby steps
+    PAGER=less
+    MANPAGER=less
+    # -F: automatically exit if entire output can be displayed on one screen
+    # -j: jump target offset (e.g. for positioning search results)
+    # -M: more verbose prompt
+    # -q: use visual bell instead of audio
+    # -R: output ANSI color and OSC8 escape sequences in "raw" form
+    # -X: disable termcap init/deinit strings
+    # -z: size of screen to display;
+    #     a negative value creates overlap between pages
+    LESS="-FMR -j2 -z-2"
+    CDPATH="~"
+    #dots=".[a-zA-Z0-9]*" # quick way to get at the dot files
+    HISTSIZE=500
+    LSCOLORS=Exfxcxdxbxegedabagacad
+    export PAGER MANPAGER LESS CDPATH HISTSIZE
+
     # mcfly config
     eval "$(mcfly init zsh)"
 
