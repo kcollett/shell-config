@@ -185,7 +185,7 @@ then
     #dots=".[a-zA-Z0-9]*" # quick way to get at the dot files
     HISTSIZE=500
     LSCOLORS=Exfxcxdxbxegedabagacad
-    export PAGER MANPAGER LESS CDPATH HISTSIZE
+    export PAGER MANPAGER LESS CDPATH HISTSIZE LSCOLORS
 
     # mcfly config
     eval "$(mcfly init zsh)"
