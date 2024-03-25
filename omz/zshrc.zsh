@@ -184,8 +184,14 @@ then
     CDPATH="~"
     #dots=".[a-zA-Z0-9]*" # quick way to get at the dot files
     HISTSIZE=500
+    # Need to set both because I'm using the installed ls (on MacOS)
+    # and the Homebrew zsh.
+    # see https://geoff.greer.fm/lscolors/
+    # and https://gist.github.com/thomd/7667642
+    CLICOLOR=1
     LSCOLORS=Exfxcxdxbxegedabagacad
-    export PAGER MANPAGER LESS CDPATH HISTSIZE LSCOLORS
+    LS_COLORS="di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
+    export PAGER MANPAGER LESS CDPATH HISTSIZE CLICOLOR LSCOLORS LS_COLORS
 
     # mcfly config
     eval "$(mcfly init zsh)"
