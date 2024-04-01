@@ -13,6 +13,9 @@ alias unhide='chflags nohidden'
 alias img_size='sips -g pixelWidth -g pixelHeight'
 alias py=python3
 alias vsc='code --wait'
+alias lnv='NVIM_APPNAME="nvim-lazy" nvim'
+alias knv='NVIM_APPNAME="nvim-kickstart" nvim'
+alias flask_run='flask run -h localhost -p 8000'
 #alias dk=docker
 #alias dkc='docker container'
 #alias dki='docker image'
