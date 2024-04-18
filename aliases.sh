@@ -65,7 +65,9 @@ alias view='nvim -R'
 #alias e='$EDITOR'
 alias g='grep -E '
 alias h=history
-alias m=less
+# try out using bat in lieu of less
+#alias m=less
+alias m=bat
 alias mcs='mcfly search'
 #alias r=rsh
 alias xa='xargs '
