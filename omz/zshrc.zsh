@@ -20,7 +20,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # XXX: probably need to be more inclusive
 [ "${TERM_PROGRAM}" = "iTerm.app" \
     -o "${TERM_PROGRAM}" = "tmux" \
-    -o "${TERM_PROGRAM}" = "alacritty" \
+    -o "${TERM}" = "alacritty" \
     -o "${TERM_PROGRAM}" = "Apple_Terminal" ] && 
     export IS_TERMINAL="true" ||
     export IS_TERMINAL="false"
