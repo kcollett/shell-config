@@ -18,7 +18,12 @@ ZSH_DISABLE_COMPFIX="true"
 export ZSH="$HOME/.oh-my-zsh"
 
 # XXX: probably need to be more inclusive
-[ "${TERM_PROGRAM}" = "iTerm.app" -o "${TERM_PROGRAM}" = "tmux"  -o "${TERM_PROGRAM}" = "Apple_Terminal" ] && export IS_TERMINAL="true" || export IS_TERMINAL="false"
+[ "${TERM_PROGRAM}" = "iTerm.app" \
+    -o "${TERM_PROGRAM}" = "tmux" \
+    -o "${TERM_PROGRAM}" = "alacritty" \
+    -o "${TERM_PROGRAM}" = "Apple_Terminal" ] && 
+    export IS_TERMINAL="true" ||
+    export IS_TERMINAL="false"
 #print IT: $IS_TERMINAL
 
 # Set name of the theme to load --- if set to "random", it will
