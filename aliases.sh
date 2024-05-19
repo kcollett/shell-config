@@ -57,7 +57,7 @@ alias ghe='git help'
 #alias view='vim -R'
 alias v=nvim
 alias vi=nvim
-alias view='nvim -R'
+alias view='vim -R'
 
 # miscellaneous
 #alias bigprocs='ps -ael | sort -nr +9 -10'
