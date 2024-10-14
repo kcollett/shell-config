@@ -5,11 +5,18 @@
 #
 #echo In aliases.local:
 #alias aacg='aacgain -a -m 5 -p -c'
-alias aacg='aacgain -r -p'
+#alias aacg='aacgain -r -p'
+# rsgain preset .ini files are in ~/Library/rsgain/presets/
+alias rsgain='~/Applications/rsgain easy'
+# standard YT audio extract
+alias ytxa='yt-dlp --extract-audio --audio-format flac --audio-quality 0'
+# show the internal hardware mode indentifier for this machine
 alias hwmod='sysctl hw.model'
 # unhide directories like ~/Library under Lion (and later)
 # e.g.: unhide ~/Library
 alias unhide='chflags nohidden'
+# turn off quarantine bit for the specified file
+alias unquarantine='xattr -d com.apple.quarantine'
 alias img_size='sips -g pixelWidth -g pixelHeight'
 alias py=python3
 alias vsc='code --wait'

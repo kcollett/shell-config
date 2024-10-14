@@ -61,6 +61,7 @@ alias nv=nvim
 #alias bigprocs='ps -ael | sort -nr +9 -10'
 #alias diff='$DIFFER'
 #alias e='$EDITOR'
+alias fpf=ffprobe_show_format
 alias g='grep -E '
 alias h=history
 # try out using bat in lieu of less
