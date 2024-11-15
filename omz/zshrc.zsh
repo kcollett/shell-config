@@ -136,21 +136,21 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 # PATH setup
 #
 
-# If we are in a homebrew environment, determine the appropriate homebrew directory
-# and run shellenv to initialize things appropriately.
-# NB: We have to work a bit to determine the homebrew directory because it
-# resides in a different directory on pre-Apple-Silicon machines.
-old_brewdir="/usr/local/bin"
-new_brewdir="/opt/homebrew/bin"
-if [ -d "$new_brewdir" ]
+# If we are in a homebrew environment, determine the path to the "brew"
+# command and use it to initialize our shell environment
+# NB: We have to work a bit because "brew" resides in a different
+# directory on pre-Apple-Silicon machines.
+old_brew="/usr/local/bin/brew"
+new_brew="/opt/homebrew/bin/brew"
+if [ -e "$new_brew" ]
 then
-    brewdir="$new_brewdir"
-elif [ -d "$old_brewdir" ]
+    brew="$new_brew"
+elif [ -e "$old_brew" ]
 then
-    brewdir="$old_brewdir"
+    brew="$old_brew"
 fi
-#echo "brewdir: $brewdir"
-[ -n "${brewdir+1}" ] && eval "$($brewdir/brew shellenv)"
+echo "brew: $brew"
+[ -n "${brew+1}" ] && eval "$($brew shellenv)"
 
 # NB: The important changes are established "brew shellenv" command above
 # export MANPATH="/usr/local/man:$MANPATH"
